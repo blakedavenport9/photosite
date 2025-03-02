@@ -4,7 +4,6 @@ import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-
 export default function EmblaCarousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true, autoplay: true, delay: 6000 }, [Autoplay()])
 

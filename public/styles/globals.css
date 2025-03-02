@@ -67,11 +67,14 @@ p {
 /* Hero Section */
 .hero {
   position: relative;
-  background-size: cover;
-  background-position: 100% center; /* Start with the right side of the image */
-  height: 100vh; /* Full screen height */
-  transition: background-position 1s ease-in-out; /* Smooth transition for background movement */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
 
 .hero::before {
   content: '';
