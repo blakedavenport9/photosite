@@ -4,6 +4,10 @@ import Image from 'next/image';
 export default function Gallery({ imagePaths }) {
   return (
     <section>
+      <div className="bg-red-500 text-white p-4">
+  If this text is red, Tailwind is working.
+</div>
+
       <h1>Sample Gallery</h1>
       <div className="gallery">
         {imagePaths.map((imagePath, index) => (

@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 /* styles/globals.css */
 body {
   font-family: Arial, sans-serif;
@@ -109,3 +115,18 @@ header {
 }
 
 
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  width: 300%; /* 100% per slide × 3 slides */
+  transition: transform 0.3s ease-out; /* Smooth sliding */
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}

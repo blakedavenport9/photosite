@@ -1,4 +1,10 @@
-@import "tailwindcss";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -21,4 +27,20 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  width: 300%; /* 100% per slide × 3 slides */
+  transition: transform 0.3s ease-out; /* Smooth sliding */
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  width: 100%;
 }
