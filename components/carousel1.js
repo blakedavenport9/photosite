@@ -4,32 +4,33 @@ import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
+const images = [
+  '/images/background/DSC01386.jpg',
+  '/images/background/DSC01518.jpg',
+  '/images/background/12345.jpg'
+]
+
 export default function EmblaCarousel() {
   const [emblaRef] = useEmblaCarousel({ loop: true, autoplay: true, delay: 6000 }, [Autoplay()])
 
   return (
-    <div className="hero" ref={emblaRef}> {/* Apply hero class to container */}
-      <div className="embla__container flex w-full h-full">
-        <div className="embla__slide flex items-center justify-center w-full h-full">
-          <img 
-            src="/images/background/DSC00140.jpg" 
-            alt="Image 1" 
-            className="w-full h-full object-contain"  // Use object-contain for scaling
-          />
-        </div>
-        <div className="embla__slide flex items-center justify-center w-full h-full">
-          <img 
-            src="/images/background/DSC01386.jpg" 
-            alt="Image 2" 
-            className="w-full h-full object-contain"  // Use object-contain for scaling
-          />
-        </div>
-        <div className="embla__slide flex items-center justify-center w-full h-full">
-          <img 
-            src="/images/background/DSC01518.jpg" 
-            alt="Image 3" 
-            className="w-full h-full object-contain"  // Use object-contain for scaling
-          />
+    <div className="relative w-full h-screen"> {/* Fullscreen container */}
+      {/* Overlay Header */}
+      <div className="hero-text">
+       <h1>"It is good to be curious about many things."</h1>
+       <p>- Mr. Rogers</p>
+      </div>
+
+      {/* Embla Carousel */}
+      <div className="hero w-full h-full" ref={emblaRef}>
+        <div className="embla__container flex w-full h-full">
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="embla__slide w-full h-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${src})` }}
+            />
+          ))}
         </div>
       </div>
     </div>
